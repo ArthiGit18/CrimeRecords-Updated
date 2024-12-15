@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Lobster&family=Nosifer&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Butcherman&family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Lobster&family=Nosifer&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Butcherman&family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Grenze+Gotisch:wght@100..900&family=Lobster&family=Nosifer&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Grenze Gotisch", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container{
+  width: 1440px;
+  max-width: 100%;
+  overflow: hidden;
+  margin: auto;
+  /* background-color: transparent; */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+
+  /* Tablet screens */
+  .container {
+    width: 100%;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Mobile screens */
+  .container {
+    width: 100%;
+    padding: 0 8px;
+  }
+}
+
+
+
+h2{
+  font-size: 40px;
+}
+
+@media (max-width: 600px) {
+  h2{
+    font-size: 30px;
+  }
+}
+
+Button{
+  padding: 10px;
+  border-radius: 50px !important;
+  border: 5px solid grey !important;
+  /* color: black !important; */
+  color: white !important;
+  font-weight: 650 !important;
+}
+
+Button:hover{
+  background-image: linear-gradient(to top, #e53e3e 0%, #edbdbd 100%);
+}
+
+.mui_icon{
+  background-color: #4AC63F;
+  border-radius: 50%;
+  color: white;
+  font-size: 30px !important;
+}
+
+
+
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.dialog-box {
+  background: black;
+  border: 2px solid #a00000;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.dialog-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.dialog-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #a00000;
+}
+
+.dialog-box p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.close-button {
+  background-color: #a00000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 1rem;
+}
+
+.close-button:hover {
+  background-color: #a00000;
+}
+
+.subscribe-button {
+  background-color: #00ff599b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-button:hover {
+  background-color: #0056b3;
+}
