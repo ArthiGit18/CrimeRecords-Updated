@@ -39,17 +39,17 @@ const Navbar = ({ isBlack }) => {
           <li className="nav-item">
             <p>Criminal Records</p>
             <ul className="dropdown-menu">
-              <li><a href="/">Search by Name</a></li>
-              <li><a href="/">Search by Location</a></li>
-              <li><a href="/">Infamous Criminals</a></li>
-              <li><a href="/">Top 10 Wanted</a></li>
+              <li><a href="/search">Search by Name</a></li>
+              <li><a href="/search">Search by Location</a></li>
+              <li><a href="/infamousCriminals">Infamous Criminals</a></li>
+              <li><a href="/topWanted">Top 10 Wanted</a></li>
             </ul>
           </li>
           <li className="nav-item">
             <p>Unsolved Mysteries</p>
             <ul className="dropdown-menu">
-              <li><a href="/">Cold Cases</a></li>
-              <li><a href="/">Missing Persons</a></li>
+              <li><a href="/coldCases">Cold Cases</a></li>
+              <li><a href="/missingPerson">Missing Persons</a></li>
               <li><a href="/">Conspiracies</a></li>
               <li><a href="/">Share Your Leads</a></li>
             </ul>
@@ -67,14 +67,8 @@ const Navbar = ({ isBlack }) => {
                  });
                }}>How Forensics Work</a></li>
               <li><a 
-               href="#forensicfacts"
-               onClick={(e) => {
-                 e.preventDefault(); // Prevent default navigation
-                 document.getElementById('forensicfacts')?.scrollIntoView({
-                   behavior: 'smooth', // Smooth scrolling
-                   block: 'start', // Align to the top of the section
-                 });
-               }}>Famous Evidence Cases</a></li>
+               href="/forensicCases"
+              >Famous Evidence Cases</a></li>
               <li><a 
                href="#forensicfacts"
                onClick={(e) => {

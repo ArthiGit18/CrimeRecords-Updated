@@ -149,3 +149,11 @@ Button:hover{
 .subscribe-button:hover {
   background-color: #0056b3;
 }
+
+.header{
+  background-color: #630000;
+}
+
+.header_content{
+  margin: 30px 0;
+}
