@@ -8,6 +8,7 @@ import MissingPerson from './pages/UnsolvedMysteries/MissingPersons';
 import ForensicWork from './pages/ForensicFiles/ForensicWork';
 import ForensicCases from './pages/ForensicFiles/ForensicCases';
 import Loading from './common/404Loading';
+import DetailView from './common/DetailView';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Route path="/forensicWork" element={<ForensicWork />} />
       <Route path="/forensicCases" element={<ForensicCases />} />
       <Route path="/loading" element={<Loading />} />
+      <Route path="/view-detail/:id" element={<DetailView />} />
     </Routes>
    </Router>
   );

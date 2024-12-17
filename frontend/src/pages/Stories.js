@@ -1,32 +1,24 @@
-import React, { useState } from 'react';
-
-const cardsData = [
-    {
-        title: 'The Heist of the Century',
-        image: '/assets/top/1 (1).jpg',
-        description: 'A daring robbery that shocked the world, where millions were stolen right under the noses of the authorities.',
-    },
-    {
-        title: 'The Mystery of the Vanishing Heiress',
-        image: '/assets/top/1 (2).jpg',
-        description: 'A young heiress disappears without a trace, leaving behind only a trail of secrets and unanswered questions.',
-    },
-    {
-        title: 'The Cold Case of the Silent Witness',
-        image: '/assets/top/1 (3).jpg',
-        description: 'A murder mystery where a key witness remained silent for decades, and the truth was finally uncovered in an unexpected twist.',
-    },
-    {
-        title: 'The Cold Case of the Silent Witness',
-        image: '/assets/top/1 (4).jpg',
-        description: 'A murder mystery where a key witness remained silent for decades, and the truth was finally uncovered in an unexpected twist.',
-    },
-];
+import React, { useState, useEffect } from 'react';
+import { fetchCards } from '../api/cardApi'; // Adjust the path as needed
 
 const Cards = () => {
+    const [cardsData, setCardsData] = useState([]);
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const [expandedIndex, setExpandedIndex] = useState(null);
     const [dialogData, setDialogData] = useState(null);
+
+    useEffect(() => {
+        const loadCards = async () => {
+            try {
+                const data = await fetchCards();
+                setCardsData(data);
+            } catch (error) {
+                console.error('Error loading cards:', error);
+            }
+        };
+
+        loadCards();
+    }, []);
 
     const openDialog = (card) => {
         setDialogData(card);
@@ -35,6 +27,7 @@ const Cards = () => {
     const closeDialog = () => {
         setDialogData(null);
     };
+
     
     console.log("setExpandedIndex", setExpandedIndex);
 

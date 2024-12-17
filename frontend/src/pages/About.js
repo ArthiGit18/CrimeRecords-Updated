@@ -1,18 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { fetchAboutContent } from '../api/aboutApi'; // Adjust path as needed
 
 const About = () => {
-    
+    const [aboutContent, setAboutContent] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const getAboutContent = async () => {
+            try {
+                const data = await fetchAboutContent();
+                setAboutContent(data);
+            } catch (error) {
+                console.error('Error loading about content:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        getAboutContent();
+    }, []);
+
     return (
         <section className="about_section">
             <div className="container">
                 <div className="about_content">
-                    <h2>About Crime Chronicles</h2>
-                    <p>
-                        Crime Chronicles offers a unique look into the world of criminal records and unsolved mysteries.
-                            With 60% of our content based on real-life cases and public records, we invite you to explore the depths of justice and crime history. Our records are frequently updated, and we encourage you to test this information by browsing our website or using our search tools. Every day, new content and fascinating criminal stories are added, ensuring a fresh perspective every time you visit.
-
-                    </p>
-
+                    {loading ? (
+                        <p>Loading...</p>
+                    ) : aboutContent.length > 0 ? (
+                        aboutContent.map((item) => (
+                            <div key={item._id}>
+                                <h2>{item.title}</h2>
+                                <p>{item.content}</p>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No content available.</p>
+                    )}
                 </div>
             </div>
         </section>
