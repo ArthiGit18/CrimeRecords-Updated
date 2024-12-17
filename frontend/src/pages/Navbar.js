@@ -50,8 +50,8 @@ const Navbar = ({ isBlack }) => {
             <ul className="dropdown-menu">
               <li><a href="/coldCases">Cold Cases</a></li>
               <li><a href="/missingPerson">Missing Persons</a></li>
-              <li><a href="/">Conspiracies</a></li>
-              <li><a href="/">Share Your Leads</a></li>
+              <li><a href="/loading">Conspiracies</a></li>
+              <li><a href="/loading">Share Your Leads</a></li>
             </ul>
           </li>
           <li className="nav-item">
@@ -70,23 +70,9 @@ const Navbar = ({ isBlack }) => {
                href="/forensicCases"
               >Famous Evidence Cases</a></li>
               <li><a 
-               href="#forensicfacts"
-               onClick={(e) => {
-                 e.preventDefault(); // Prevent default navigation
-                 document.getElementById('forensicfacts')?.scrollIntoView({
-                   behavior: 'smooth', // Smooth scrolling
-                   block: 'start', // Align to the top of the section
-                 });
-               }}>Tools of the Trade</a></li>
+               href="/loading">Tools of the Trade</a></li>
               <li><a 
-               href="#forensicfacts"
-               onClick={(e) => {
-                 e.preventDefault(); // Prevent default navigation
-                 document.getElementById('forensicfacts')?.scrollIntoView({
-                   behavior: 'smooth', // Smooth scrolling
-                   block: 'start', // Align to the top of the section
-                 });
-               }}>Learn Forensics</a></li>
+               href="/loading">Learn Forensics</a></li>
             </ul>
           </li>
           <li className="nav-item">

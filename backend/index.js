@@ -2,13 +2,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
-const cors = require('cors'); 
+const cors = require('cors');
+
+// Import route files
 const aboutRoutes = require('./routes/aboutRoutes');
 const topPicksRoutes = require('./routes/topPicksRoutes');
 const forensicFactsRoutes = require('./routes/forensicFactsRoutes');
 const cardRoutes = require('./routes/cardRoutes');
 const testimonialRoutes = require('./routes/testimonialRoutes');
-const contactRoutes = require("./routes/contactRoutes");
+const searchRoutes = require('./routes/searchRoutes');
+const contactRoutes = require('./routes/contactRoutes');
 
 dotenv.config();
 
@@ -19,6 +22,7 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
+app.use("/uploads", express.static("uploads")); // Static folder for uploaded files
 
 // Connect to MongoDB
 mongoose
@@ -36,6 +40,7 @@ app.use('/api/forensicfacts', forensicFactsRoutes);
 app.use('/api/cards', cardRoutes);
 app.use('/api/testimonials', testimonialRoutes);
 app.use("/api/contact", contactRoutes);
+app.use("/api/search", searchRoutes); // Attach search route
 
 // Default Route
 app.get('/', (req, res) => {

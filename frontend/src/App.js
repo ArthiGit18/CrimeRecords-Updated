@@ -7,6 +7,7 @@ import ColdCases from './pages/UnsolvedMysteries/ColdCases';
 import MissingPerson from './pages/UnsolvedMysteries/MissingPersons';
 import ForensicWork from './pages/ForensicFiles/ForensicWork';
 import ForensicCases from './pages/ForensicFiles/ForensicCases';
+import Loading from './common/404Loading';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route path="/missingPerson" element={<MissingPerson />} />
       <Route path="/forensicWork" element={<ForensicWork />} />
       <Route path="/forensicCases" element={<ForensicCases />} />
+      <Route path="/loading" element={<Loading />} />
     </Routes>
    </Router>
   );
