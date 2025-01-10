@@ -86,6 +86,7 @@
 .hamburger_menu {
   display: none;
   cursor: pointer;
+
   svg {
     color: #fff;
     font-size: 2rem;
@@ -107,7 +108,8 @@
       position: relative;
       margin: 0 15px;
 
-      a,p {
+      a,
+      p {
         text-decoration: none;
         color: #fff;
         padding: 10px;
@@ -129,7 +131,8 @@
         list-style: none;
         padding: 10px 0;
         border: 1px solid #444;
-        li{
+
+        li {
           padding: 10px 0;
         }
 
@@ -492,7 +495,7 @@
         column-gap: 30px;
         row-gap: 60px;
       }
-      
+
       @media (max-width: 550px) {
         width: 100%;
         display: grid;
@@ -501,7 +504,7 @@
         row-gap: 50px;
       }
 
-    
+
     }
 
     .card {
@@ -575,13 +578,13 @@
 
       @media (max-width: 800px) {
         width: auto;
-        
+
         .read-more {
           padding: 0;
         }
       }
     }
-   
+
   }
 
 }
@@ -599,7 +602,8 @@
   z-index: 1;
 
   .content-wrapper {
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for text */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background for text */
     padding: 3rem;
     border-radius: 10px;
     max-width: 600px;
@@ -670,9 +674,12 @@
 
   .jigsaw-puzzle {
     display: inline-block;
-    width: 400px; /* Set a consistent width */
-    height: 400px; /* Set a consistent height */
-    overflow: hidden; /* Prevent overflowing content */
+    width: 400px;
+    /* Set a consistent width */
+    height: 400px;
+    /* Set a consistent height */
+    overflow: hidden;
+    /* Prevent overflowing content */
     border-radius: 10px;
     margin: 40px auto;
     background-color: #000;
@@ -680,12 +687,14 @@
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Ensure the image fills the puzzle area without distortion */
+      object-fit: cover;
+      /* Ensure the image fills the puzzle area without distortion */
     }
 
     @media (max-width: 500px) {
       width: 300px;
     }
+
     @media (max-width: 390px) {
       width: 250px;
     }
@@ -709,16 +718,16 @@
 }
 
 .footer {
-  background-color: #a00000;  // Dark background for footer
-  color: #fff;             // White text for contrast
-  padding: 10px 20px;      // Spacing inside footer
-  text-align: center;      // Center the text and links
+  background-color: #a00000; // Dark background for footer
+  color: #fff; // White text for contrast
+  padding: 10px 20px; // Spacing inside footer
+  text-align: center; // Center the text and links
   font-family: Arial, sans-serif;
 
   .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-    
+
     .footer-text {
       font-size: 14px;
       margin-bottom: 20px;
@@ -733,7 +742,7 @@
         transition: color 0.3s;
 
         &:hover {
-          color: #a00000;  // Change color on hover
+          color: #a00000; // Change color on hover
         }
       }
     }
@@ -793,8 +802,10 @@
     border-radius: 5px;
     font-size: 16px;
     color: white;
-    background-color: #333; /* Gray background for text fields */
-    border: 1px solid #555; /* Light border */
+    background-color: #333;
+    /* Gray background for text fields */
+    border: 1px solid #555;
+    /* Light border */
   }
 
   .contact-textarea {
@@ -807,6 +818,7 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+
     label {
       margin-bottom: 10px;
       font-size: 18px;
@@ -832,6 +844,78 @@
 
     &:hover {
       background-color: #45a049;
+    }
+  }
+}
+
+.search_wrapper {
+
+  .search_main {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    column-gap: 20px;
+    padding: 40px 0;
+
+    .search_content {
+      text-align: center;
+
+      h2 {
+        margin: 30px 0;
+        text-decoration: underline;
+      }
+
+      img {
+        width: 100%;
+        height: 500px;
+
+      }
+    }
+
+    .search_moreOptions {
+      .moreoptions {
+        border: 2px solid white;
+
+        ul li {
+          list-style-type: none;
+          // padding: 15px 0;
+          height: 50px;
+          border-bottom: 2px solid white;
+          text-align: center;
+
+          margin: auto;
+
+          background-color: #000;
+
+          /* Make the <a> fill the entire <li> */
+          a {
+            display: block;
+            /* Set block to occupy the full width of the parent li */
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+          }
+
+          :hover {
+            background-color: #a00000;
+            /* Apply hover effect to the li */
+          }
+        }
+      }
+
+      .additional_images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+        margin: 50px 0;
+        img {
+          width: 100%;
+        }
+      }
     }
   }
 }

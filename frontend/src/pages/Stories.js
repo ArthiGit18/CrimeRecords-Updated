@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { fetchCards } from '../api/cardApi'; // Adjust the path as needed
+import { useNavigate } from 'react-router-dom';
 
 const Cards = () => {
     const [cardsData, setCardsData] = useState([]);
     const [hoveredIndex, setHoveredIndex] = useState(null);
-    const [expandedIndex, setExpandedIndex] = useState(null);
     const [dialogData, setDialogData] = useState(null);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const loadCards = async () => {
@@ -28,11 +30,12 @@ const Cards = () => {
         setDialogData(null);
     };
 
-    
-    console.log("setExpandedIndex", setExpandedIndex);
+    const handleKnowMore = (_id) => {
+        navigate(`/payment/${_id}`);
+    };
 
     return (
-        <div className='card_section'>
+        <div className="card_section">
             <h2>Tales of the Unexplained: True Stories of Mystery</h2>
             <div className="cards-wrapper">
                 <div className="cards-container">
@@ -47,7 +50,7 @@ const Cards = () => {
                         >
                             <img src={card.image} alt={card.title} />
                             <h3>{card.title}</h3>
-                            <p>{expandedIndex === index ? card.description : `${card.description.substring(0, 100)}...`}</p>
+                            <p>{card.description.substring(0, 100)}...</p>
                             <button onClick={() => openDialog(card)} className="read-more">
                                 Read More
                             </button>
@@ -63,7 +66,12 @@ const Cards = () => {
                         <h3>{dialogData.title}</h3>
                         <p>Unlock the Story Subscription starting from $34 for 1 Month</p>
                         <button onClick={closeDialog} className="close-button">Close</button>
-                        <button className="subscribe-button">Know More</button>
+                        <button
+                            onClick={() => handleKnowMore(dialogData._id)}
+                            className="subscribe-button"
+                        >
+                            Know More
+                        </button>
                     </div>
                 </div>
             )}

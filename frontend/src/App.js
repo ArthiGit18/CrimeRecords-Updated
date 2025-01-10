@@ -9,6 +9,7 @@ import ForensicWork from './pages/ForensicFiles/ForensicWork';
 import ForensicCases from './pages/ForensicFiles/ForensicCases';
 import Loading from './common/404Loading';
 import DetailView from './common/DetailView';
+import Payment from './common/Payment';
 
 
 function App() {
@@ -24,7 +25,11 @@ function App() {
       <Route path="/forensicWork" element={<ForensicWork />} />
       <Route path="/forensicCases" element={<ForensicCases />} />
       <Route path="/loading" element={<Loading />} />
+      <Route path="/payment/:_id" element={<Payment />} />
       <Route path="/view-detail/:id" element={<DetailView />} />
+      <Route path="/view-detail-topPicks/:id" element={<DetailView />} />
+      <Route path="/view-detail-forensic/:_id" element={<DetailView />} />
+      
     </Routes>
    </Router>
   );

@@ -1,9 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { fetchForensicFacts } from '../api/forensicFactsApi'; // Adjust the path as needed
 
 const ForensicFacts = () => {
     const [forensicFacts, setForensicFacts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    
+        const navigate = useNavigate();
+    
+        const handleViewMore = (_id) => {
+            navigate(`/view-detail-forensic/${_id}`); // Navigate to the DetailView page with the specific id
+        };
+        const breadcrumbItems = [
+            { label: 'Home', href: '/' },
+            { label: 'Search', href: '/search' },
+        ];
+    
 
     useEffect(() => {
         const getForensicFacts = async () => {
@@ -30,7 +43,7 @@ const ForensicFacts = () => {
                 <div className="facts_grid">
                     {forensicFacts.map((fact) => (
                         <div key={fact._id} className="fact_card">
-                            <img src={fact.image} alt={fact.title} />
+                            <img src={fact.image} alt={fact.title} onClick={() => handleViewMore(fact._id)} />
                             <div className="card_content">
                                 <h3>{fact.title}</h3>
                                 <p>{fact.description}</p>
